@@ -16,6 +16,7 @@
 package com.example.reply.ui
 
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
@@ -25,15 +26,15 @@ import com.example.reply.data.MailboxType
 
 @Composable
 fun ReplyApp(
-    windowSize: WindowSizeClass,
+    windowSize: WindowWidthSizeClass,
     modifier: Modifier = Modifier,
 ) {
     val viewModel: ReplyViewModel = viewModel()
     val replyUiState = viewModel.uiState.collectAsState().value
     when(windowSize){
-        WindowSizeClass.Compact ->{}
-        WindowSizeClass.Medium ->{}
-        WindowSizeClass.Expanded ->{}
+        WindowWidthSizeClass.Compact ->{}
+        WindowWidthSizeClass.Medium ->{}
+        WindowWidthSizeClass.Expanded ->{}
         else ->{}
     }
 

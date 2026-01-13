@@ -37,6 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.reply.ui.ReplyApp
 import com.example.reply.ui.theme.ReplyTheme
 
+
 class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -56,7 +57,7 @@ class MainActivity : ComponentActivity() {
                         )
                 ) {
                     val windowSize = calculateWindowSizeClass(this)
-                    ReplyApp(windowSize)
+                    ReplyApp(windowSize = windowSize.widthSizeClass)
                 }
             }
         }
