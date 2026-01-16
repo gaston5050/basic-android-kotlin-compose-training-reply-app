@@ -121,6 +121,7 @@ fun ReplyHomeScreen(
     else {
         if (replyUiState.isShowingHomepage) {
             ReplyAppContent(
+
                 replyUiState = replyUiState,
                 onTabPressed = onTabPressed,
                 onEmailCardPressed = onEmailCardPressed,
@@ -163,6 +164,7 @@ private fun ReplyAppContent(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.inverseOnSurface)
         ) {
+            if(navigationType == ReplyNavigationType.NAVIGATION_RAIL){
             ReplyListOnlyContent(
                 replyUiState = replyUiState,
                 onEmailCardPressed = onEmailCardPressed,
@@ -170,8 +172,10 @@ private fun ReplyAppContent(
                     .padding(
                         horizontal = dimensionResource(R.dimen.email_list_only_horizontal_padding)
                     )
-            )
+            )}
+            if(navigationType == ReplyNavigationType.BOTTON_NAVIGATION){
             val bottomNavigationContentDescription = stringResource(R.string.navigation_bottom)
+
             ReplyBottomNavigationBar(
                 currentTab = replyUiState.currentMailbox,
                 onTabPressed = onTabPressed,
@@ -179,6 +183,7 @@ private fun ReplyAppContent(
                 modifier = Modifier
                     .fillMaxWidth()
             )
+        }
         }
     }
 }
